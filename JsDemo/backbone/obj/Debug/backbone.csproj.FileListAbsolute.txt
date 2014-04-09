@@ -1,0 +1,5 @@
+F:\GitHub\javascript\JsDemo\backbone\bin\backbone.dll
+F:\GitHub\javascript\JsDemo\backbone\bin\backbone.pdb
+F:\GitHub\javascript\JsDemo\backbone\obj\Debug\ResolveAssemblyReference.cache
+F:\GitHub\javascript\JsDemo\backbone\obj\Debug\backbone.dll
+F:\GitHub\javascript\JsDemo\backbone\obj\Debug\backbone.pdb

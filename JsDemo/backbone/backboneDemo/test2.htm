@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title> 本例说明如何绑定DOM事件到视图的方法中</title>
+    
+</head>
+    <body>
+        <script src="../Scripts/jquery-1.4.1.min.js" type="text/javascript"></script>
+    <script src="../Scripts/json2.js" type="text/javascript"></script>
+    <script src="../Scripts/underscore.js" type="text/javascript"></script>
+    <script src="../Scripts/backbone.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        (function ($) {
+            var ListView3 = Backbone.View.extend({
+                el: $('body'), // el attaches to existing element
+
+                events: {
+                    'click button#add': 'addItem'
+                },
+                initialize: function () {
+                    _.bindAll(this, 'render', 'addItem'); // every function that uses 'this' as the current object should be in here
+
+                    this.counter = 0; // total number of items added thus far
+                    this.render();
+                },
+                // `render()` now introduces a button to add a new list item.
+                render: function () {
+                    $(this.el).append("<button id='add'>Add list item</button>");
+                    $(this.el).append("<ul></ul>");
+                },
+                // `addItem()`: Custom function called via `click` event above.
+                addItem: function () {
+                    this.counter++;
+                    $('ul', this.el).append("<li>hello world" + this.counter + "</li>");
+                }
+            });
+
+            var listView3 = new ListView3();
+        })(jQuery);
+
+    </script>
+    </body>
+   
+</html>

@@ -57,6 +57,7 @@
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
     <Content Include="backboneDemo\basicTest1.aspx" />
+    <Content Include="backboneDemo\Demo\helloworld.htm" />
     <Content Include="backboneDemo\test2.htm" />
     <Content Include="backboneDemo\test3.htm" />
     <Content Include="Scripts\backbone.js" />

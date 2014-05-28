@@ -57,10 +57,22 @@
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
     <Content Include="backboneDemo\basicTest1.aspx" />
+    <Content Include="backboneDemo\Demo\Collection1.htm" />
+    <Content Include="backboneDemo\Demo\FirstReports.htm" />
     <Content Include="backboneDemo\Demo\helloworld.htm" />
+    <Content Include="backboneDemo\Demo\Model1.htm" />
+    <Content Include="backboneDemo\Demo\Model2.htm" />
+    <Content Include="backboneDemo\Demo\Route1.htm" />
+    <Content Include="backboneDemo\Demo\View1.htm" />
+    <Content Include="backboneDemo\examples\backbone.localStorage.js" />
+    <Content Include="backboneDemo\examples\todos\destroy.png" />
+    <Content Include="backboneDemo\examples\todos\index.html" />
+    <Content Include="backboneDemo\examples\todos\todos.js" />
+    <Content Include="backboneDemo\examples\todos\todos.css" />
     <Content Include="backboneDemo\test2.htm" />
     <Content Include="backboneDemo\test3.htm" />
     <Content Include="Scripts\backbone.js" />
+    <Content Include="Scripts\jquery.js" />
     <Content Include="Scripts\json2.js" />
     <Content Include="Scripts\underscore.js" />
     <Content Include="Styles\Site.css" />
@@ -120,6 +132,7 @@
     <Compile Include="backboneDemo\basicTest1.aspx.designer.cs">
       <DependentUpon>basicTest1.aspx</DependentUpon>
     </Compile>
+    <Compile Include="backboneDemo\Model\man.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

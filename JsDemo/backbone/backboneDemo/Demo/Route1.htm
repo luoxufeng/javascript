@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="http://the5fireblog.b0.upaiyun.com/staticfile/jquery-1.10.2.js"></script>
+    <script src="http://the5fireblog.b0.upaiyun.com/staticfile/underscore.js"></script>
+    <script src="http://the5fireblog.b0.upaiyun.com/staticfile/backbone.js"></script>
+</head>
+    <body>
+        <a href="#actions">testActions</a>
+        <a href="/posts/120">Post 120</a>
+        <a href="#/download/user/images/hey.gif">download gif</a>
+        <a href="#/dashboard/graph">Load Route/Action View</a>
+        <script type="text/javascript">
+            (function () {
+                var AppRouter = Backbone.Router.extend({
+
+                    routes: {
+                        "/posts/:id": "getPost",
+                        //下面对应的链接为<a href="#/download/user/images/hey.gif">download gif</a>
+                        "/download/*path": "downloadFile",
+                        //下面对应的链接为<a href="#/dashboard/graph">Load Route/Action View</a>
+                        "/:route/:action": "loadView",
+                        "*actions": "defaultRoute"
+                    },
+
+                    getPost: function (id) {
+                        alert(id);
+                    },
+
+                    defaultRoute: function (actions) {
+                        alert(actions);
+                    },
+
+                    downloadFile: function (path) {
+                        alert(path); // user/images/hey.gif
+                    },
+
+                    loadView: function (route, action) {
+                        alert(route + "_" + action); // dashboard_graph
+                    }
+
+                });
+
+                var app_router = new AppRouter;
+                Backbone.history.start();
+                
+            })(jQuery)
+        </script>
+    </body>
+</html>

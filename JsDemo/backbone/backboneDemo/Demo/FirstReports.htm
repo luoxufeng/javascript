@@ -1,51 +1,62 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+﻿<!DOCTYPE html>
+<html>
 <head>
-    <title></title>
-    <script src="http://the5fireblog.b0.upaiyun.com/staticfile/jquery-1.10.2.js"></script>
-    <script src="http://the5fireblog.b0.upaiyun.com/staticfile/underscore.js"></script>
-    <script src="http://the5fireblog.b0.upaiyun.com/staticfile/backbone.js"></script>
+    <title>the5fire.com-backbone.js-Hello World</title>
 </head>
 <body>
-   <button id="check">新手报道</button>
-   <ul id="world-list"></ul>
-   <script type="text/javascript">
-       (function ($) {
-           
-        World = Backbone.Model.extend({
-            //创建一个World的对象，拥有name属性
-            name: null
+    <button id="check">新手报到</button>
+    <ul id="world-list">
+    </ul>
+    <a href="http://www.the5fire.com">更多教程</a>
+    <script src="../../Scripts/jquery.js"></script>
+    <script src="../../Scripts/underscore.js"></script>
+    <script src="../../Scripts/backbone.js"></script>
+    <script>
+    (function ($) {
+        World=Backbone.Model.extend({
+            name:null
         });
 
-        Worlds = Backbone.Collection.extend({
-            //World对象的集合
-            initialize: function (options) {
-                    this.bind("add", options.view.addOneWorld);
+        Worlds=Backbone.Collection.extend({
+            initialize:function(models,options) {
+                alert("worlds initialize");
+                this.bind("add",options.view.AddOneWorld);
             }
         });
 
-        AppView = Backbone.View.extend({
-            el: $("body"),
-            initialize: function () {
-                //构造函数，实例化一个World集合类，并且以字典方式传入AppView的对象
-                this.worlds = new Worlds( { view: this });
+        AppView=Backbone.View.extend({
+            el:$("body"),
+            initialize:function() {
+                alert(" app view  initialize");
+               this.worlds=new Worlds(null,{view:this});
             },
-            events: {
-                "click #check":  "checkIn",   //事件绑定，绑定Dom中id为check的元素
+            events:{
+                "click #check":"checkin"
             },
-            checkIn: function () {
-                var world_name = prompt("请问，您是哪星人?");
-                if(world_name == "") world_name = '未知';
-                var world = new World({ name: world_name });
+
+            checkin:function() {
+                var name=prompt("你是来自哪个星球的 ");
+                if(name=="") name="未知";
+                var world = new World({ name: name });
                 this.worlds.add(world);
             },
-            addOneWorld: function(model) {
-                $("#world-list").append("<li>这里是来自 <b>" + model.get('name') + "</b> 星球的问候：hello world！</li>");
+
+            AddOneWorld: function (model) {
+                alert("addoneworld event");
+                $("#world-list").append("<li>我是来自"+model.get("name")+"的</li>");
             }
         });
-        //实例化AppView
-        var appview = new AppView;
+
+        var app = new AppView;
+
+        /*执行的顺序为： 
+          1，首先执行AppView 的initialize
+          2，然后执行Worlds 的initialize
+          3, 点击按钮，触发checkin事件
+          4，checkin事件中添加model对象，触发AddOneWorld事件
+          5,执行AddOneWorld事件
+        */
     })(jQuery);
-   </script>
+    </script>
 </body>
 </html>

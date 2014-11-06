@@ -3,7 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "backbone", "backbone\backbone.csproj", "{7E63BBBF-80E2-4DB0-8221-7870F232EE19}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FtpTools", "D:\Ctrip\Tools\Dev\FtpTools\FtpTools.csproj", "{45B73A01-B5D6-45C2-8BAD-44A4006EFBB7}"
+EndProject
 Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 1
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://192.168.83.70:8080/tfs/travelinfo
+		SccProjectUniqueName0 = D:\\Ctrip\\Tools\\Dev\\FtpTools\\FtpTools.csproj
+		SccProjectName0 = $/Tools/Dev/FtpTools
+		SccAuxPath0 = http://192.168.83.70:8080/tfs/travelinfo
+		SccLocalPath0 = D:\\Ctrip\\Tools\\Dev\\FtpTools
+		SccProvider0 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -13,6 +25,10 @@ Global
 		{7E63BBBF-80E2-4DB0-8221-7870F232EE19}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E63BBBF-80E2-4DB0-8221-7870F232EE19}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E63BBBF-80E2-4DB0-8221-7870F232EE19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45B73A01-B5D6-45C2-8BAD-44A4006EFBB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45B73A01-B5D6-45C2-8BAD-44A4006EFBB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45B73A01-B5D6-45C2-8BAD-44A4006EFBB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45B73A01-B5D6-45C2-8BAD-44A4006EFBB7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

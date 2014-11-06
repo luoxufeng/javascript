@@ -51,6 +51,17 @@
     <Reference Include="System.Web.ApplicationServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AjaxProductClick.aspx" />
+    <Content Include="backboneDemo\Demo\View2.htm" />
+    <Content Include="Demo\c5.css" />
+    <Content Include="Demo\htmldom.htm" />
+    <Content Include="Demo\images\bg.gif" />
+    <Content Include="Demo\images\head_index.gif" />
+    <Content Include="Demo\images\holder.gif" />
+    <Content Include="Demo\images\html5_new_note.png" />
+    <Content Include="Demo\images\wrapper.gif" />
+    <Content Include="file.aspx" />
+    <Content Include="journeysUrl.xml" />
     <Content Include="About.aspx" />
     <Content Include="Account\ChangePassword.aspx" />
     <Content Include="Account\ChangePasswordSuccess.aspx" />
@@ -65,12 +76,17 @@
     <Content Include="backboneDemo\Demo\Route1.htm" />
     <Content Include="backboneDemo\Demo\View1.htm" />
     <Content Include="backboneDemo\examples\backbone.localStorage.js" />
+    <Content Include="backboneDemo\examples\todos2\destroy.png" />
+    <Content Include="backboneDemo\examples\todos2\index.htm" />
+    <Content Include="backboneDemo\examples\todos2\todos.css" />
+    <Content Include="backboneDemo\examples\todos2\todos.js" />
     <Content Include="backboneDemo\examples\todos\destroy.png" />
     <Content Include="backboneDemo\examples\todos\index.html" />
     <Content Include="backboneDemo\examples\todos\todos.js" />
     <Content Include="backboneDemo\examples\todos\todos.css" />
     <Content Include="backboneDemo\test2.htm" />
     <Content Include="backboneDemo\test3.htm" />
+    <Content Include="html5\拖放.htm" />
     <Content Include="Scripts\backbone.js" />
     <Content Include="Scripts\jquery.js" />
     <Content Include="Scripts\json2.js" />
@@ -81,6 +97,7 @@
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="test.htm" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -88,6 +105,7 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="About.aspx.cs">
@@ -125,6 +143,13 @@
     <Compile Include="Account\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AjaxProductClick.aspx.cs">
+      <DependentUpon>AjaxProductClick.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AjaxProductClick.aspx.designer.cs">
+      <DependentUpon>AjaxProductClick.aspx</DependentUpon>
+    </Compile>
     <Compile Include="backboneDemo\basicTest1.aspx.cs">
       <DependentUpon>basicTest1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -140,6 +165,13 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="file.aspx.cs">
+      <DependentUpon>file.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="file.aspx.designer.cs">
+      <DependentUpon>file.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -150,6 +182,13 @@
     </Compile>
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

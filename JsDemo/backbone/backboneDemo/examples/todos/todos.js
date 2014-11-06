@@ -91,14 +91,12 @@ $(function () {
         // a one-to-one correspondence between a **Todo** and a **TodoView** in this
         // app, we set a direct reference on the model for convenience.
         initialize: function () {
-            alert("to do view initialize");
             this.listenTo(this.model, 'change', this.render);
             this.listenTo(this.model, 'destroy', this.remove);
         },
 
         // Re-render the titles of the todo item.
         render: function () {
-            alert("to do view render");
             this.$el.html(this.template(this.model.toJSON()));
             this.$el.toggleClass('done', this.model.get('done'));
             this.input = this.$('.edit');
@@ -119,7 +117,6 @@ $(function () {
         // Close the `"editing"` mode, saving changes to the todo.
         close: function () {
             var value = this.input.val();
-            alert("edit:"+value);
             if (!value) {
                 this.clear();
             } else {
@@ -135,7 +132,6 @@ $(function () {
 
         // Remove the item, destroy the model.
         clear: function () {
-            alert("todoView clear");
             this.model.destroy();
         }
 
@@ -165,7 +161,6 @@ $(function () {
         // collection, when items are added or changed. Kick things off by
         // loading any preexisting todos that might be saved in *localStorage*.
         initialize: function () {
-            alert("App View initialize");
             this.input = this.$("#new-todo");
             this.allCheckbox = this.$("#toggle-all")[0];
 
@@ -183,7 +178,6 @@ $(function () {
         // of the app doesn't change.
         render: function () {
             var done = Todos.done().length;
-            alert("App View render:" + done);
             var remaining = Todos.remaining().length;
 
             if (Todos.length) {
@@ -201,7 +195,6 @@ $(function () {
         // Add a single todo item to the list by creating a view for it, and
         // appending its element to the `<ul>`.
         addOne: function (todo) {
-            alert("addOne");
             var view = new TodoView({ model: todo });
             this.$("#todo-list").append(view.render().el);
         },

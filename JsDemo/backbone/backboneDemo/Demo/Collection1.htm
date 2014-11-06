@@ -2,35 +2,33 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Backbonejs中的Collections实践</title>
-    <script src="http://the5fireblog.b0.upaiyun.com/staticfile/jquery-1.10.2.js"></script>
-    <script src="http://the5fireblog.b0.upaiyun.com/staticfile/underscore.js"></script>
-    <script src="http://the5fireblog.b0.upaiyun.com/staticfile/backbone.js"></script>
+    <script src="../../Scripts/jquery.js"></script>
+    <script src="../../Scripts/underscore.js"></script>
+    <script src="../../Scripts/backbone.js"></script>
 </head>
 <body>
     <script type="text/javascript">
         (function () {
             var Book = Backbone.Model.extend({
                 
-                defaluts: {
-                    title:'default'
-                },
-                initialize: function() {
+                defaults: {
+                    title:"default"
                 }
             });
 
             var BookShelf = Backbone.Collection.extend({
-                model:Book
-            });
+               model:Book
+           });
 
-            var book1 = new Book({ title: "book1" });
-            var book2 = new Book({ title: "book2" });
-            var book3 = new Book({ title: "book3" });
+           var book1 = new Book({ title: "书本1" });
+           var book2 = new Book({ title: "书本2" });
+           var book3 = new Book({ title: "书本3" });
 
-            var bookShelf = new BookShelf;
-            bookShelf.add(book1);
-            bookShelf.add(book2);
-            bookShelf.add(book3);
-            bookShelf.remove(book3);
+           var bookShelf = new BookShelf;
+           bookShelf.add(book1);
+           bookShelf.add(book2);
+           bookShelf.add(book3);
+           bookShelf.remove(book3);
 
             bookShelf.each(function(book) {
                 alert(book.get("title"));

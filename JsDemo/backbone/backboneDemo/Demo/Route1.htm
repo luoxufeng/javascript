@@ -2,49 +2,42 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title></title>
-    <script src="http://the5fireblog.b0.upaiyun.com/staticfile/jquery-1.10.2.js"></script>
-    <script src="http://the5fireblog.b0.upaiyun.com/staticfile/underscore.js"></script>
-    <script src="http://the5fireblog.b0.upaiyun.com/staticfile/backbone.js"></script>
+    <script src="../../Scripts/jquery.js"></script>
+    <script src="../../Scripts/underscore.js"></script>
+    <script src="../../Scripts/backbone.js"></script>
 </head>
     <body>
         <a href="#actions">testActions</a>
-        <a href="/posts/120">Post 120</a>
+        <a href="#/posts/120">Post 120</a>
         <a href="#/download/user/images/hey.gif">download gif</a>
         <a href="#/dashboard/graph">Load Route/Action View</a>
+        <a href="#/manual">manual</a>
         <script type="text/javascript">
             (function () {
-                var AppRouter = Backbone.Router.extend({
-
+                var AppRoute = Backbone.Router.extend({
                     routes: {
-                        "/posts/:id": "getPost",
-                        //下面对应的链接为<a href="#/download/user/images/hey.gif">download gif</a>
-                        "/download/*path": "downloadFile",
-                        //下面对应的链接为<a href="#/dashboard/graph">Load Route/Action View</a>
-                        "/:route/:action": "loadView",
+                        "posts/:id": "getPost",
+                        "manual":"manual",
                         "*actions": "defaultRoute"
+                        
                     },
-
-                    getPost: function (id) {
-                        alert(id);
-                    },
-
                     defaultRoute: function (actions) {
                         alert(actions);
                     },
-
-                    downloadFile: function (path) {
-                        alert(path); // user/images/hey.gif
+                    getPost:function(id) {
+                        alert(id);
                     },
-
-                    loadView: function (route, action) {
-                        alert(route + "_" + action); // dashboard_graph
+                    manual:function() {
+                        alert("call manual");
+                        app_route.navigate("/posts/404", { trigger: true, replace: true });
                     }
-
                 });
 
-                var app_router = new AppRouter;
-                Backbone.history.start();
-                
+                var app_route = new AppRoute;
+                Backbone.history.start(); //调用Backbone.history.start()方法来初始化这个Router。
+
+                //如果一个链接符合多个路由的条件，则已符合路由中的第一个为准，即后面符合条件的忽略，
+                //即（#/posts/120同时符合路由1和路由2 ，但它会进入第一个路由）
             })(jQuery)
         </script>
     </body>

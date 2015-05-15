@@ -1,0 +1,4 @@
+F:\GitHub\javascript\JsDemo\JSBasic\bin\JSBasic.dll
+F:\GitHub\javascript\JsDemo\JSBasic\bin\JSBasic.pdb
+F:\GitHub\javascript\JsDemo\JSBasic\obj\Debug\JSBasic.dll
+F:\GitHub\javascript\JsDemo\JSBasic\obj\Debug\JSBasic.pdb

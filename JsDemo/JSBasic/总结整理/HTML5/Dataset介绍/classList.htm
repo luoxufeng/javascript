@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>classList详解</title>
+</head>
+<body>
+  <div id="test" class="a b c">jQuery的hasClass,addClass,removeClass我们在熟悉不过，而对于元素的Dom中的className操作，可以用classList进行操作</div>
+
+    <script type="text/javascript">
+        //length,获取元素类名的个数
+        var el = document.getElementById("test");
+        var len = el.classList.length;
+        console.log("length:获取元素类名的个数,div元素类名的个数为：" + len);
+
+        //item方法，获取元素的类名，接受一个参数，即数字索引：
+        var cls = el.classList.item(0); //如果index超出索引，则返回null
+        console.log("item方法，获取元素的类名，接受一个参数，即数字索引,cls=" + cls);
+
+        //add 方法，用于添加类名，接受一个参数，即类名；
+        el.classList.add("myclass"); //如有多个类名，只能一个一个的添加
+        console.log("添加之后的classname为：" + el.classList);
+
+        //remove方法，用于删除元素的类，接受一个类名参数，和add一样，一次只能删除一个类名
+        el.classList.remove("a");
+        console.log("删除a类名后的classname为：" + el.classList);
+
+        //contains方法，用于检测元素是否包含某个类，返回Boolean值
+        var flag = el.classList.contains("myclass");
+        if (flag) {
+            console.log("包含myclass类名");
+        } else {
+            console.log("不包含myclass类名");
+        }
+
+        //toggle方法，如果存在某个类，则remove掉,如果不存在，则add，返回Boolean
+        el.classList.toggle("classtest");
+        console.log("用toggle方法添加一个classtest类,classList=" + el.classList);
+        el.classList.toggle("classtest"); //在次执行，即删除
+        console.log("用toggle方法在次执行，即删除classtest类,classList=" + el.classList);
+    </script>
+</body>
+</html>

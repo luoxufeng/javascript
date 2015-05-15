@@ -52,6 +52,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AjaxProductClick.aspx" />
+    <Content Include="backboneDemo\Demo2\first.htm" />
+    <Content Include="backboneDemo\Demo2\model1.htm" />
     <Content Include="backboneDemo\Demo\View2.htm" />
     <Content Include="Demo\c5.css" />
     <Content Include="Demo\htmldom.htm" />

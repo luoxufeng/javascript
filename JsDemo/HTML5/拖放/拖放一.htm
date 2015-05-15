@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style type="text/css">
+        #divContent{ width: 500px;height: 100px;padding: 10px;border: 1px solid #00bfff;}
+    </style>
+</head>
+    <body>
+        <!--关于拖放，拖动时，ondrag将触发，放开时，触发ondrop-->
+        <div id="divContent" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <img id="imgContent" src="../Images/1.jpg" draggable="true" ondragstart="drag(event)"/>
+        <script type="text/javascript">
+            //拖动什么 - ondragstart 和 setData()
+            function drag(ev) {
+                ev.dataTransfer.setData("Text", ev.target.id); //target 事件属性可返回事件的目标节点（触发该事件的节点）
+            }
+
+            //放到何处 - ondragover
+            function allowDrop(ev) {
+                ev.preventDefault();//允许拖放
+            }
+        
+            //进行放置 - ondrop 当放置被拖数据时，会发生 drop 事件。
+            function drop(e) {
+                e.preventDefault(); //阻止它的默认行为的发生而发生其他的事情
+                var data = e.dataTransfer.getData("Text");
+                e.target.appendChild(document.getElementById(data));
+            }
+
+            /*关于拖放有几个事件:
+              一：被拖放的控件
+              1，设置draggable="true"
+              2，ondragstart事件如： ondragstart="drag(event)"
+
+              二： 接收的控件
+              1，ondragover事件，设置是否允许允许拖放，如：ondragover="allowDrop(event)"
+              2，ondrop事件，设置拖放的内容，如：ondrop="drop(event)"
+            */
+            
+
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>CurrentTarget与Target的区别</title>
+</head>
+<body>
+    <div id="outer" style="background: #00fa9a">
+        click outer
+        <p id="inner" style="background: #a9a9a9">click inner</p>
+    </div>
+    <script>
+        function GetElement(id) {
+            return document.getElementById(id);
+        }
+        
+        function addEvent(obj, ev, handler) {
+            if (window.attachEvent) {
+                obj.attachEvent("on"+ev,handler);
+            }else if (window.addEventListener) {
+                obj.addEventListener(ev, handler, false);
+            }
+        }
+
+        function test(e) {
+            alert("e.target.tagName:"+e.target.tagName+"\n e.currentTarget.tagName:"+e.currentTarget.tagName);
+        }
+
+        var outer = GetElement("outer");
+        var inner = GetElement("inner");
+        addEvent(inner, "click", test);
+        addEvent(outer, "click", test);
+
+        /*当同时绑定inner和outer的click事件时，在inner上点击时
+        1)会首先触发自身的click事件，这时候target和currentTarget是一样的，都是p
+        2)然后触发outer的click事件，这时候target是P，而currentTarget是div
+
+        在outer上点击时，这时候target和currentTarget都是div
+
+        总结：currentTarget是事件的绑定者 ，target是事件的触发者
+        */
+    </script>
+</body>
+</html>

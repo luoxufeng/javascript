@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <!--立即执行函数一般称为自执行匿名函数，通常通过传入对象方式将函数暴露给外界，这是模块模式的一个变种-->
+    <script type="text/javascript">
+        var module = {}; //这里的关键是：我们预先声明依赖于模块变量，而不依赖于全局变量。
+        (function (module) {
+            module.notGlobalFunction = function() {
+                console.log("I am not global");
+            };
+            
+            module.num = 55;//赋值一个变量
+            
+        } (module));
+      //在自执行匿名函数里，所有的全局作用域是封闭的，通过将它附加到module变量实现。
+        
+        function notGlobalFunction() {
+            console.log("I am global");
+        }
+
+        notGlobalFunction();
+        module.notGlobalFunction();
+        console.log(module.num);
+    </script>
+</body>
+</html>

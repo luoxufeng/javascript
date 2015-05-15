@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <!--javascript将var声明变量提升到函数块顶部，接着初始化变量，这就是所谓的变量提升-->
+    <!--由于variableHost中有var 声明的变量history,因此提升到函数的顶部，所以此函数的第一个值为undefined,history=1即为赋值为1，并不是全局变量，所以单独访问history变量时会输出ReferenceError-->
+    <script type="text/javascript">
+        function variableHost() {
+            console.log(history);
+            history = 1;//由于此函数中已经声明了history变量，所以此变量不是全局的
+            console.log(history);
+            var history = 2;
+            console.log(history);
+        }
+
+        variableHost();
+        //输出 undefined (如果在作用域内不存在var声明，将得到一个引用错误(ReferenceError))
+        //输出 "1"
+        //输出 "2"
+        console.log(history); //输出 ReferenceError (不存在全局变量"history")
+
+
+
+        function variableHost() {
+            history = 1;//没有var声明，代表是全局的
+            console.log(history);
+        }
+
+        variableHost();
+        //输出 "1"
+        console.log(history); //输出 1 (存在全局变量"history")
+    </script>
+</body>
+</html>

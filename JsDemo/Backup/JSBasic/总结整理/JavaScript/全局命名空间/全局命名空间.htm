@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <!--在Web浏览器中，全局对象就是windows对象-->
+    <script type="text/javascript">
+        function globalFunction() {
+            console.log("I am the original global function");
+        }
+        
+        function overwriteTheGlobal() {
+           globalFunction = function() {
+                console.log("I am the new global function");
+            };
+        }
+
+        globalFunction(); //全局函数，输出：I am the original global function 
+        overwriteTheGlobal();//覆盖globalFunction
+        globalFunction(); //此时会输出新的结果： I am the new global function
+
+
+        //在声明变量前使用var，为离它最近的函数创建了一个属性，如果省略var关键字，那么意味着
+        //给现有的变量分配一个新值，并提升了作用域链。这个作用域链可能是全局范围的。
+        var imAGlobal = true;
+        function globalGrabber() {
+            imAGlobal = false;
+            return imAGlobal;
+        }
+
+        console.log(imAGlobal);//true
+        console.log(globalGrabber());//false
+        console.log(imAGlobal);//false
+    </script>
+</body>
+</html>

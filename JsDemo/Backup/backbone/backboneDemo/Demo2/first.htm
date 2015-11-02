@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+<button id="check">新手报到</button>
+    <ul id="world-list">
+    </ul>
+    <a href="http://www.the5fire.com">更多教程</a>
+    <script src="../../Scripts/jquery.js"></script>
+    <script src="../../Scripts/underscore.js"></script>
+    <script src="../../Scripts/backbone.js"></script>
+    <script>
+    (function($){
+          World=Backbone.Model.extend({
+        	name:null
+        });
+
+        Worlds=Backbone.Collection.extend({
+        	initialize:function(model,options){
+        		this.bind("add",options.view.addOneWorld); //此代码中的this指的是Worlds对象，初始化时传入了model和view对象
+        	}
+        });
+
+        AppView=Backbone.View.extend({
+        	el:$("body"),
+        	initialize: function () {
+        	    
+        	    //构造函数，实例化一个World集合类
+        	    //并且以字典方式传入AppView的对象
+        	   this.Worlds=new Worlds(null,{view:this});//在View中，collection实例化对象并赋值给this.Worlds
+        	},
+
+        	events:{
+        		"click #check":"checkin"
+        	},
+
+        	checkin:function()
+        	{
+        		var name=prompt("请问，你是哪里人？");
+        		if(name=="") name="未知";
+        		var world=new World({name:name});
+        		this.Worlds.add(world); //此处的this.Worlds是initialize中this.Worlds,通过这种方式往collection中添加Model
+        	},
+
+        	addOneWorld:function(model)
+        	{
+        	    $("#world-list").append("<li>这里是来自<b>" + model.get('name') + "</b>星球的问候：hello</li>");
+        	}
+        });
+
+        var appview=new AppView;
+
+    })(jQuery)
+
+    /*执行的顺序是：new AppView
+     1)执行AppView中的initialize方法
+     2）由于Appview中的initialize方法实例化Worlds对象，故第二步执行Worlds的initialize
+     3）在Worlds的initialize的初始化中，当Worlds添加时，执行View中指定的addOneWorld
+     4）点击按钮，触发checkin事件
+     5）checkin事件中添加world，导致Worlds集合发生变化，触发addOneWorld
+     6)执行addOneWorld
+    */
+    </script>
+</body>
+</html>

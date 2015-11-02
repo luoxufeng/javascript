@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+    <body>
+        <canvas id="myCanvas" width="200" height="100" style="border: 1px solid #c71585"></canvas>
+        <canvas id="myCanvas1" width="200" height="100" style="border: 1px solid #c71585"></canvas>
+        <canvas id="myCanvas2" width="200" height="100" style="border: 1px solid #c71585"></canvas>
+        <script type="text/javascript">
+            //线条
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d");
+            ctx.moveTo(10, 10);
+            ctx.lineTo(150, 50);
+            ctx.lineTo(10, 50);
+            ctx.stroke();
+
+            //圆形
+            var t = document.getElementById("myCanvas1");
+            var tx = t.getContext("2d");
+            tx.fillStyle = "#FF0000";
+            tx.beginPath();
+            tx.arc(70, 18, 15, 0, Math.PI * 2, true);
+            tx.closePath();
+            tx.fill();
+
+            //把一幅画放在画布上
+            var cc = document.getElementById("myCanvas2");
+            var cxt = cc.getContext("2d");
+            var img = new Image();
+            img.src = "../Images/eg_flower.png";
+            cxt.drawImage(img, 0, 0);
+        </script>
+    </body>
+</html>

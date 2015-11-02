@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>HTML 5 Web 数据存储</title>
+</head>
+<body>
+    <script type="text/javascript">
+        //localStorage方法存储的数据没有时间的限制
+        localStorage.lastName = "luoxufeng";
+        console.log(localStorage.lastName);
+
+        //sessionStorage方法是针对一个session进行数据存储，当用户关闭浏览器窗口后，数据会被删除。
+        sessionStorage.lastName = "alice";
+        console.log(sessionStorage.lastName);
+
+        //根据用户访问页面的次数进行计数
+        if (localStorage.pageCount) {
+            localStorage.pageCount = Number(localStorage.pageCount) + 1;
+        } else {
+            localStorage.pageCount = 1;
+        }
+        console.log("localStorage visits = " + localStorage.pageCount + " times.");
+
+
+        //sessionStorage方法针对一个session进行数据存储，当用户关闭浏览器窗口后，数据会被删除
+        if (sessionStorage.pageCount) {
+            sessionStorage.pageCount = Number(sessionStorage.pageCount) + 1;
+        } else {
+            sessionStorage.pageCount = 1;
+        }
+        console.log("sessionStorage visits = " + sessionStorage.pageCount + " times.");
+
+        //比较这两者的区别，当关闭浏览器后，sessionStorage.pageCount的数据等于第一次加载的数据，
+        //而localStorage.pageCount会进行累加，例如不断刷新页面，而后关闭浏览器，再重新打开浏览器，这时候
+        //这时候，localStorage visits = 8 times.    sessionStorage visits = 1 times.
+    </script>
+</body>
+</html>

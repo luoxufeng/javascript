@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>来回拖放</title>
+    <style type="text/css">
+        #div1{ width: 200px;height: 200px;padding: 10px;border: 1px solid #008000;float: left;margin-right: 10px;}
+        #div2{ width: 200px;height: 200px;padding: 10px;border: 1px solid #0000ff;float: left;}
+    </style>
+</head>
+<body>
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <img src="../Images/1.jpg" draggable="true" ondragstart="drag(event)" id="imgContent"/>
+    </div>
+    
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)">
+        
+    </div>
+    
+    <script type="text/javascript">
+        //拖动什么
+        function drag(ev) {
+            ev.dataTransfer.setData("Text",ev.target.id);
+        }
+
+        //允许拖动
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        //放到何处
+        function drop(e) {
+            e.preventDefault(); //阻止它的默认行为的发生而发生其他的事情
+            var data = e.dataTransfer.getData("Text");
+            e.target.appendChild(document.getElementById(data));
+        }
+    </script>
+</body>
+</html>

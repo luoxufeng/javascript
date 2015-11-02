@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<body>
+    <script src="../../Scripts/jquery.js"></script>
+    <script src="../../Scripts/underscore.js"></script>
+    <script src="../../Scripts/backbone.js"></script>
+    <script type="text/javascript">
+        (function ($) {
+            var AppRouter = Backbone.Router.extend({
+                routes: {
+                    "posts/:id": "getPost",
+                    "download/*path": "downloadFile",
+                    ":route/:action": "loadView",
+                    "manual":"manual",
+                    "*actions":"defaultRoute"
+                },
+
+                getPost:function(id){
+                    alert(id);
+                },
+
+                downloadFile:function(path){
+                    alert(path);
+                },
+
+                loadView: function (route,action) {
+                    alert(route+"_"+action);
+                },
+
+                //手动触发route
+                manual: function () {
+                    alert("call manual");
+                    app_router.navigate("/posts/" + 404, {tigger:true,replace:true});//tigger表示触发事件，如果为false，则只是url变化，并不会触发事件，replace表示url替换，而不是前进到这个url，浏览器history不会记录这个变动
+                },
+
+                defaultRoute: function (actions) {
+                    alert(actions);
+                }
+            });
+
+            var app_router = new AppRouter;
+            Backbone.history.start();//需要通过Backbone.history.start()方法来初始化这个Router
+
+        })(jQuery)
+    </script>
+
+    <a href="#actions">testActions</a>
+    <a href="#/posts/ss">Post120</a>
+    <a href="#/download/user/images/hey.gif">download gif</a>
+    <a href="#/dashboard/graph">Load Route/Action View</a>
+    <a href="#/manual">manual</a>  
+</body>
+</html>

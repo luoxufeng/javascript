@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+     <script src="../../Scripts/jquery.js"></script>
+    <script src="../../Scripts/underscore.js"></script>
+    <script src="../../Scripts/backbone.js"></script>
+</head>
+<body>
+    <script type="text/javascript">
+       var Man=Backbone.Model.extend({
+       	  initialize:function(){
+       	      alert("你好哦");
+       	      this.bind("change:name", function() {
+       	          var name = this.get("name");
+       	          alert("你改变了name属性为： " + name);
+       	      });
+       	      this.bind("invalid", function(model, error) {
+       	          alert(error);
+       	      });
+       	  },
+       	  defaults: {
+       	      name:"张三",
+       	      age:"38"
+       	  },
+       	  aboutMe: function() {
+       	      return "我叫" + this.get("name") + ",今年" + this.get("age") + "岁";
+       	  },
+       	  
+          validate: function(attributes) {
+              if (attributes.name == "") {
+                  return "name不能为空";
+              }
+          }
+       });
+
+      var man = new Man();
+//      man.on('invalid', function(model,error) {
+//          alert(error);
+      //      });
+      //手动触发验证, set时会触发
+      //man.set({ name: "" }, { "validate": true });
+      man.set({name:""});
+      //save时触发验证。根据验证规则，弹出错误提示。
+      man.save();
+    </script>
+</body>
+</html>

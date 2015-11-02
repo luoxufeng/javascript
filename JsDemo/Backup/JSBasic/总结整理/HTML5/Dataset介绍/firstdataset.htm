@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>dataset获取元素的自定义属性</title>
+</head>
+    <body>
+        <!--参考文章http://www.zhangxinxu.com/wordpress/2011/06/html5%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%9E%E6%80%A7%E5%AF%B9%E8%B1%A1dataset%E7%AE%80%E4%BB%8B/->
+        <!--在html5中，我们可以使用data-前缀设置我们需要的自定义属性，来进行一些数据的存放-->
+        <div id="day1" data-drink="coffer" data-food="sushi" data-meal-Year="2015">
+            在html5中，我们可以使用data-前缀设置我们需要的自定义属性，来进行一些数据的存放
+        </div>
+        <p id="button">点击我</p>
+        
+        <script type="text/javascript">
+            var day1 = document.getElementById("day1");
+            var typeDrink = day1.dataset && day1.dataset.drink;
+            var typeYear = day1.dataset && day1.dataset.mealYear;
+            document.getElementById("button").onclick = function() {
+                alert("饮料是：" + typeDrink + "\n年份是：" + typeYear);
+            };
+
+        //需要注意的是带两字符连接的名称需要命名骆驼命名（即：首字母小写，例如：data-meal-Year）
+            //例如：data-meal-Year属性，可以通过day1.dataset.mealYear获取
+        </script>
+    </body>
+</html>

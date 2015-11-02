@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title></title>
+    </head>
+    <style type="text/css">
+#divContent {width:488px;height:450px;padding:10px;border:1px solid #aaaaaa;}
+</style>
+    <script type="text/javascript">
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("Text",ev.target.id);
+        }
+
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("Text");
+            ev.target.appendChild(document.getElementById(data));
+        }
+    </script>
+<body>
+    <p>请把 W3School 的图片拖放到矩形中</p>
+    <div id="divContent" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <br/>
+    <img src="http://dimg02.c-ctrip.com/images/tg/330/510/918/4ce1f3ed278a49f9952fb7ec5130d569_C_300_450.jpg" id="drag1" draggable="true" ondragstart="drag(event)" />
+</body>
+</html>

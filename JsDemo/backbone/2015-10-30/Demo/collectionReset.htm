@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <script src="../../Scripts/jquery.js"></script>
+    <script src="../../Scripts/underscore.js"></script>
+    <script src="../../Scripts/backbone.js"></script>
+    <script>
+        (function ($) {
+            var Book = Backbone.Model.extend({
+                title: 'default'
+            });
+
+            var BookShelf = Backbone.Collection.extend({
+                model: Book
+            });
+
+            var bookShelf = new BookShelf;
+            var book = new Book;
+            var showAllBooks = function() {
+                bookShelf.each(function(book) {
+                    console.log(book.get("Title"));
+                });
+            };
+            bookShelf.bind("reset", showAllBooks); //绑定的步骤要在fetch之前进行。
+            bookShelf.url = "server/HandlerBook.ashx";
+            bookShelf.fetch({
+                //需要主动传递reset,才会触发reset
+                reset:true,
+                success: function(collection, response, options) {
+                    collection.each(function(book) {
+                        alert(book.get("Title"));
+                    });
+                },error:function(collection, response, options) {
+                    alert("error");
+                }
+            });
+          
+        })(jQuery);
+    </script>
+</body>
+</html>

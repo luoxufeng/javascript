@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <script src="../../Scripts/jquery.js"></script>
+    <script src="../../Scripts/underscore.js"></script>
+    <script src="../../Scripts/backbone.js"></script>
+    <script type="text/javascript">
+        (function($) {
+            var Book = Backbone.Model.extend({
+                title:'default'
+            });
+
+            var BookShelf = Backbone.Collection.extend({
+                model:Book
+            });
+
+            var book1 = new Book({ title: "这是书本一" });
+            var book2 = new Book({ title: "这是书本二" });
+            var book3 = new Book({ title: "这是书本三" });
+
+            var bookshelf = new BookShelf;
+            bookshelf.add(book1);
+            bookshelf.add(book2);
+            bookshelf.add(book3);
+            bookshelf.remove(book3);
+
+            bookshelf.each(function(book) {
+                console.log(book.get("title"));
+            });
+        })(jQuery);
+    </script>
+    
+</body>
+</html>

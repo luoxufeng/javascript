@@ -51,6 +51,12 @@
     <Reference Include="System.Web.ApplicationServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="2015-10-30\Demo\collection1.htm" />
+    <Content Include="2015-10-30\Demo\collectionCreate.htm" />
+    <Content Include="2015-10-30\Demo\collectionUrl.htm" />
+    <Content Include="2015-10-30\Demo\collectionReset.htm" />
+    <Content Include="2015-10-30\Demo\index.htm" />
+    <Content Include="2015-10-30\Demo\model1.htm" />
     <Content Include="AjaxProductClick.aspx" />
     <Content Include="backboneDemo\Demo2\first.htm" />
     <Content Include="backboneDemo\Demo2\model1.htm" />
@@ -110,6 +116,10 @@
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="2015-10-30\Demo\server\Book.cs" />
+    <Compile Include="2015-10-30\Demo\server\HandlerBook.ashx.cs">
+      <DependentUpon>HandlerBook.ashx</DependentUpon>
+    </Compile>
     <Compile Include="About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -199,6 +209,9 @@
   <ItemGroup>
     <Content Include="Account\Web.config" />
     <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="2015-10-30\Demo\server\HandlerBook.ashx" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

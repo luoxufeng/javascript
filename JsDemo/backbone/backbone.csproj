@@ -60,6 +60,7 @@
     <Reference Include="System.Web.ApplicationServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="2015-10-30\Demo\backbone.localStorage.js" />
     <Content Include="2015-10-30\Demo\collection1.htm" />
     <Content Include="2015-10-30\Demo\collectionCreate.htm" />
     <Content Include="2015-10-30\Demo\collectionUrl.htm" />
@@ -67,7 +68,13 @@
     <Content Include="2015-10-30\Demo\index.htm" />
     <Content Include="2015-10-30\Demo\model1.htm" />
     <Content Include="2015-10-30\Demo\router1.html" />
+    <Content Include="2015-10-30\Demo\todos\destroy.png" />
+    <Content Include="2015-10-30\Demo\todos\hello.js" />
+    <Content Include="2015-10-30\Demo\todos\index.html" />
+    <Content Include="2015-10-30\Demo\todos\todos.css" />
+    <Content Include="2015-10-30\Demo\todos\todos.js" />
     <Content Include="2015-10-30\Demo\view1.html" />
+    <Content Include="2015-10-30\Demo\view2.htm" />
     <Content Include="AjaxProductClick.aspx" />
     <Content Include="backboneDemo\Demo2\first.htm" />
     <Content Include="backboneDemo\Demo2\model1.htm" />

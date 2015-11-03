@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+  <div id="search_container"></div>
+    <script type="text/template" id="search_template">
+        <ul>
+        <%_.each(labels,function(name){%>
+        <%if(name!="label2"){%>
+             <li><%=name %></li>
+        <% }%>
+       <% }) %>
+      </ul>
+      <label><%= search_label %></label>
+        <input type="text" id="search_input" />
+        <input type="button" id="search_button" value="Search" />
+    </script>
+    <script src="../../Scripts/jquery.js"></script>
+    <script src="../../Scripts/underscore.js"></script>
+    <script src="../../Scripts/backbone.js"></script>
+    <script type="text/javascript">
+        (function ($) {
+            var SearchView = Backbone.View.extend({
+                el:"#search_container",
+                initialize: function() {
+                    var labels = ["label1", "label2", "label3", "label5"];
+                    this.render(labels);
+                },
+                render:function(content) {
+                    var template = _.template($("#search_template").html());
+                    $(this.el).html(template({ labels: content, search_label: "搜索" }));
+                    this.$el.find("#search_input").val("苹果");//$el是对view中元素的缓存
+                },
+                
+                events: {
+                    "click #search_button":"search"
+                },
+                
+                search:function() {
+                    var content = $("#search_input").val();
+                    alert("搜索的内容为："+content);
+                }
+            });
+
+            var searchView = new SearchView;
+        })(jQuery)
+    </script>
+</body>
+</html>

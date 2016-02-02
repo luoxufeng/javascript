@@ -116,6 +116,9 @@
     <Content Include="Scripts\backbone.js" />
     <Content Include="Scripts\jquery.js" />
     <Content Include="Scripts\json2.js" />
+    <Content Include="Scripts\lib\index.js" />
+    <Content Include="Scripts\require.js" />
+    <Content Include="Scripts\require_config.js" />
     <Content Include="Scripts\underscore.js" />
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />

@@ -1,53 +1,19 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title></title>
-
+    <title>我的第一个backbone的例子</title>
 </head>
 <body>
     <button id="check">新手报到</button>
     <ul id="world-list">
         
     </ul>
-    <script src="../../Scripts/jquery.js"></script>
-<script src="../../Scripts/underscore.js"></script>
-    <script src="../../Scripts/backbone.js"></script>
+    <script src="../../Scripts/require.js" data-main="../../Scripts/lib/index.js"></script>
+    <script src="../../Scripts/require_config.js"></script> 
     <script>
-
-        (function($) {
-            World = Backbone.Model.extend({
-                name: null
-            });
-            Worlds = Backbone.Collection.extend({
-                initialize:function(models, options) {
-                    this.bind("add", options.view.addOneWord);
-                }
-            });
-
-            AppView = Backbone.View.extend({
-                el:$("body"),
-                initialize: function() {
-                    this.worlds = new Worlds(null, {view:this});
-                },
-                events: {
-                    "click #check":"checkIn"
-                },
-                
-                checkIn: function() {
-                    var world_name = prompt("请问你是哪里人");
-                    if (world_name == "") world_name = "未知";
-                    var world = new World({ name: world_name });
-                    this.worlds.add(world);
-                },
-
-                addOneWord: function (model) {
-                    $("#world-list").append("<li>我是来自："+model.get("name")+"的人！</li>");
-                }
-            });
-
-            var app = new AppView;
-
-        })(jQuery);
+        require(['index'], function(indexView) {
+            var app = indexView.AppView;
+            var AppView = new app;
+        });  
     </script>
 </body>
 </html>

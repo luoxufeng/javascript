@@ -1,0 +1,32 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>css3 box-sizing使用指南</title>
+    <style>
+        .box_sizing {
+            width: 180px;
+            padding: 40px 20px;
+            background: #a0b3d6;
+            overflow: hidden;
+        }
+        .box_sizing .in {
+            width: 100%;
+            border: 12px double #34538b;
+            padding: 5px;
+            background: white;
+            box-sizing: border-box;
+            -o-box-sizing: border-box;
+            -ms-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+        }
+        
+      
+    </style>
+</head>
+<body>
+    <div class="box_sizing">
+        <div class="in">此处12像素的border和5像素的padding值算在宽度里面了~~！</div> 
+    </div>
+    
+</body>
+</html>

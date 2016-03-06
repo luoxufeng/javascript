@@ -19,6 +19,10 @@
     </FileUpgradeFlags>
     <OldToolsVersion>4.0</OldToolsVersion>
     <UpgradeBackupLocation />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -56,7 +60,14 @@
     <Reference Include="System.Web.ApplicationServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="example\jquery插件学习\插件extend方法学习.html" />
+    <Content Include="example\jquery插件学习\简单插件一.html" />
+    <Content Include="example\美食页面\css\food.css" />
+    <Content Include="example\美食页面\css\header.css" />
+    <Content Include="example\美食页面\food.html" />
+    <Content Include="example\美食页面\img\d_foodsp.png" />
     <Content Include="Global.asax" />
+    <Content Include="Script\jquery.js" />
     <Content Include="testgit.htm" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

@@ -2,3 +2,9 @@ F:\GitHub\javascript\JsDemo\JSBasic\bin\JSBasic.dll
 F:\GitHub\javascript\JsDemo\JSBasic\bin\JSBasic.pdb
 F:\GitHub\javascript\JsDemo\JSBasic\obj\Debug\JSBasic.dll
 F:\GitHub\javascript\JsDemo\JSBasic\obj\Debug\JSBasic.pdb
+G:\2016-02-20\demo\javascript\JsDemo\JSBasic\bin\JSBasic.dll.config
+G:\2016-02-20\demo\javascript\JsDemo\JSBasic\bin\JSBasic.dll
+G:\2016-02-20\demo\javascript\JsDemo\JSBasic\bin\JSBasic.pdb
+G:\2016-02-20\demo\javascript\JsDemo\JSBasic\obj\Debug\JSBasic.csprojResolveAssemblyReference.cache
+G:\2016-02-20\demo\javascript\JsDemo\JSBasic\obj\Debug\JSBasic.dll
+G:\2016-02-20\demo\javascript\JsDemo\JSBasic\obj\Debug\JSBasic.pdb

@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>居中的N种方法</title>
+    <style type="text/css">
+        .div1 {
+            border: 1px red solid;
+            height: 25px;
+            line-height: 25px;
+            overflow: hidden;
+        }
+        
+        .div2 
+        {
+            padding: 25px;
+            border: 1px blue solid;
+            width: 300px;            
+        }
+        
+        .div3 {
+            display: table;
+            height: 100px;
+        }
+        
+        .content {
+            display: table-cell;
+            vertical-align: middle;
+            border: 1px solid green;
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1">单行文本的垂直居中，只需设定height和line-height的值一样即可</div>
+    <div class="div2">多行未知高度的文字垂直居中，只需要设定padding值相同即可</div>
+    <div class="div3">
+        <div class="content">多行文字实现垂直居中，可以模拟table中的vertical-align属性，需要注意display:table和display:table-cell的使用方法
+            ，display:table用于设置在父元素上，display:table-cell，必须设置在子元素上
+        </div>
+    </div>
+   
+</body>
+</html>

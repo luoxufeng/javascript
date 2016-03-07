@@ -1,0 +1,162 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>block,inline,inline-block</title>
+    <style type="text/css">
+       /* div, p {
+            border: 1px solid red;
+        }
+        
+        span {
+            border: 1px solid green;
+            width: 600px;
+            height: 200px;
+        }*/
+        em {
+            border: 1px solid green;
+            width: 600px;
+            height: 200px;
+        }
+        
+        .setline {
+            border: 1px solid green;
+            display: inline-block;
+            width: 400px;
+            height: 50px;
+        }
+        
+        .layoutImg {
+            width: 840px;
+            overflow: hidden;
+            margin: 20px;
+        }
+        
+         .layoutImg span {
+             display: inline-block;
+             width: 120px;
+             height: 160px;
+             margin: 10px 5px;
+         }
+         
+          .layoutImg span label{
+              height: 25px;
+              line-height: 25px;
+              display: inline-block;
+         }
+         
+         
+          .content
+         {
+             width: 530px;
+             border: 1px gold solid;
+         }
+         
+         .content ul {
+             list-style-type: disc;
+             margin: 0;
+             padding: 0;
+         }
+         
+         .cf:after {
+             content: ".";
+             display: block;
+             clear: both;
+             font-size: 0;
+             height: 0;
+             line-height: 0;
+             visibility: hidden;
+             overflow: hidden;
+         }
+         
+         .content ul li {
+             float: left;
+             width: 120px;
+             height: 170px;
+             padding-left: 5px;
+             list-style: none;
+             padding: 5px;
+         }
+          .title{
+              height: 25px;
+              line-height: 25px;
+              overflow: hidden;
+              display: inline-block;
+         }
+    </style>
+</head>
+<body>
+    <div>我是块级div元素哦，我会独自占一行哦</div>
+    <p>我也是块级p元素哦，我会独自占一行哦</p>
+    <h1>我也是块级h1元素哦，我也会独自占一行哦</h1>
+    
+    <span>我是行内元素span哦，不会占一行哦，但是设置width,height对我无效哦</span>
+    <em>我也是行内元素em哦，设置的width，height对我无效哦</em>
+    <span class="setline">我是span，我改变display值时，width,height对我有了效果</span>
+    <em class="setline">我是em，我改变display值时，width,height对我有了效果</em>
+    <!--<div class="layoutImg">
+        <span><img src="http://img1.gtimg.com/astro/pics/hv1/208/21/2030/132006313.jpg"/><label>这是测试的哦</label></span>
+        <span><img src="http://img1.gtimg.com/astro/pics/hv1/208/21/2030/132006313.jpg"/><label>这是测试的哦</label></span>
+        <span><img src="http://img1.gtimg.com/astro/pics/hv1/208/21/2030/132006313.jpg"/><label>这是测试的哦</label></span>
+        <span><img src="http://img1.gtimg.com/astro/pics/hv1/208/21/2030/132006313.jpg"/><label>这是测试的哦</label></span>
+        <span><img src="http://img1.gtimg.com/astro/pics/hv1/208/21/2030/132006313.jpg"/><label>这是测试的哦</label></span>
+        <span><img src="http://img1.gtimg.com/astro/pics/hv1/208/21/2030/132006313.jpg"/><label>这是测试的哦</label></span>
+        <span><img src="http://img1.gtimg.com/astro/pics/hv1/208/21/2030/132006313.jpg"/><label>这是测试的哦</label></span>
+        <span><img src="http://img1.gtimg.com/astro/pics/hv1/208/21/2030/132006313.jpg"/><label>这是测试的哦</label></span>
+        <span><img src="http://img1.gtimg.com/astro/pics/hv1/208/21/2030/132006313.jpg"/><label>这是测试的哦</label></span>
+        <span><img src="http://img1.gtimg.com/astro/pics/hv1/208/21/2030/132006313.jpg"/><label>这是测试的哦</label></span>
+    </div>-->
+    
+    <div class="content">
+        <ul class="cf">
+            <li>
+                <a>
+                    <img src="http://img1.gtimg.com/astro/pics/hv1/208/21/2030/132006313.jpg"/>
+                    <span class="title">这是测试的标题哦</span>
+                </a>
+            </li>
+            <li>
+                <a>
+                    <img src="http://img1.gtimg.com/astro/pics/hv1/208/21/2030/132006313.jpg"/>
+                    <span class="title">这是测试的标题哦</span>
+                </a>
+            </li>
+            <li>
+                <a>
+                    <img src="http://img1.gtimg.com/astro/pics/hv1/208/21/2030/132006313.jpg"/>
+                    <span class="title">这是测试的标题哦</span>
+                </a>
+            </li>
+            <li>
+                <a>
+                    <img src="http://img1.gtimg.com/astro/pics/hv1/208/21/2030/132006313.jpg"/>
+                     <span class="title">这是测试的标题哦</span>
+                </a>
+            </li>
+            <li>
+                <a>
+                    <img src="http://img1.gtimg.com/astro/pics/hv1/208/21/2030/132006313.jpg"/>
+                    <span class="title">这是测试的标题哦</span>
+                </a>
+            </li>
+            <li>
+                <a>
+                    <img src="http://img1.gtimg.com/astro/pics/hv1/208/21/2030/132006313.jpg"/>
+                    <span class="title">这是测试的标题哦</span>
+                </a>
+            </li>
+            <li>
+                <a>
+                    <img src="http://img1.gtimg.com/astro/pics/hv1/208/21/2030/132006313.jpg"/>
+                   <span class="title">这是测试的标题哦</span>
+                </a>
+            </li>
+            <li>
+                <a>
+                    <img src="http://img1.gtimg.com/astro/pics/hv1/208/21/2030/132006313.jpg"/>
+                   <span class="title">这是测试的标题哦</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

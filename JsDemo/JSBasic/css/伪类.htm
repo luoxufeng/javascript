@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>伪类的使用</title>
+    <style type="text/css">
+        a:after {
+            content: "↗"
+        }
+        a:before {
+            content: "("attr(href)")"
+        }
+        h1::before {
+            content: url(http://img1.gtimg.com/astro/pics/hv1/208/21/2030/132006313.jpg);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <a href="http://www.baidu.com">www.baidu.com</a>
+        <h1>这是我测试的哦</h1>
+    </div>
+</body>
+</html>

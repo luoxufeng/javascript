@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+    <body>
+        <ul id="sec">
+            <li data-key="1">北京</li>
+            <li data-key="2">上海</li>
+            <li data-key="3">成都</li>
+        </ul>
+        <h1 id="city">
+        </h1>
+    </body>
+<script src="../../Scripts/jquery.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $("#sec li").on("click", function(e) {
+            var e1 = $(e.target);
+            var id = e1.attr("data-key");
+            $.get("server/Handler2.ashx", { id: id }, function(data) {
+                $("#city").html(data);
+                alert("nihao");
+            });
+        });
+    </script>
+</html>

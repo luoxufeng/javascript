@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>插件extend方法简单学习</title>
+</head>
+<body>
+    <script src="../../Script/jquery.js"></script>
+    <img src="http://images4.c-ctrip.com/target//fd/tg/g1/M0A/BF/9D/CghzflUwknqAO_oMAAEHbdShtkI341.jpg" id="imgSrc"/>
+    <script>
+        var setting = $.extend({}, { name: "alice", age: 28 }, { name: "stone", sex: "boy" });
+        console.log(setting);
+
+        $.extend($.easing, {
+            easeInSine: function (x, t, b, c, d) {
+                return -c * Math.cos(t / d * (Math.PI / 2)) + c + b;
+            }
+        });
+
+        $("#imgSrc").animate({
+            width: "90%",
+            height: "100%",
+            fontSize: "10em",
+            borderWidth: 10
+        }, "slow", "easeInSine", function () {
+            alert("移动了吗 ，哈哈");
+        });
+
+        //Jquery的extend方法还有一个重载原型：  
+        // extend(boolean,dest,src1,src2,src3...)
+        var result = $.extend(true, {}, { name: "alice", location: { city: "shanghai", country: "china" } }, { age: 28, name: "stone", location: { city: "beijing", state: "y" } });
+        console.log(result);
+
+        
+        var result2 = $.extend(false, {}, { name: "alice",last:"222", location: { city: "shanghai", country: "china" } }, { age: 28, name: "stone", location: { city: "beijing", state: "y" } });
+        console.log(result2);
+
+    </script>
+</body>
+</html>

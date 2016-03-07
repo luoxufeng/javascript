@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>简单插件学习一</title>
+    <script src="../../Script/jquery.js"></script>
+</head>
+<body>
+    <input type="text" id="txtName" />
+    <script type="text/javascript">
+       ;(function ($) {
+            $.extend({
+                test: function () {
+                    alert("这是我测试的方775法3哈");
+                }
+            });
+
+            $.fn.test2 = function (settings) {
+                settings = $.extend({}, $.fn.test2.sn.defaults, settings);
+                console.log(settings);
+                $.fn.test2.sn.add();
+            }
+
+            $.fn.test2.sn = {
+                defaults: {
+                    dir: "H",
+                    speed: 500
+                },
+
+                add: function () {
+                    alert("滚动方式:" + this.defaults.dir);
+                }
+            }
+
+        })(jQuery);
+       
+       $.test();
+       $("#txtName").test2({name:"alicetest",dir:"V"});
+    </script>
+</body>
+</html>

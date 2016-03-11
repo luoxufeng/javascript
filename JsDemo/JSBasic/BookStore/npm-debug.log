@@ -1,0 +1,57 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'c:\\Program Files (x86)\\nodejs\\node.exe',
+1 verbose cli   'c:\\Program Files (x86)\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'https://registry.npm.taobao.org/http-server' ]
+2 info using npm@1.4.13
+3 info using node@v0.11.9
+4 warn package.json BookStore@0.1.0 No repository field.
+5 warn package.json BookStore@0.1.0 No README data
+6 verbose readDependencies using package.json deps
+7 verbose cache add [ 'https://registry.npm.taobao.org/http-server', null ]
+8 verbose cache add name=undefined spec="https://registry.npm.taobao.org/http-server" args=["https://registry.npm.taobao.org/http-server",null]
+9 verbose parsed url { protocol: 'https:',
+9 verbose parsed url   slashes: true,
+9 verbose parsed url   auth: null,
+9 verbose parsed url   host: 'registry.npm.taobao.org',
+9 verbose parsed url   port: null,
+9 verbose parsed url   hostname: 'registry.npm.taobao.org',
+9 verbose parsed url   hash: null,
+9 verbose parsed url   search: null,
+9 verbose parsed url   query: null,
+9 verbose parsed url   pathname: '/http-server',
+9 verbose parsed url   path: '/http-server',
+9 verbose parsed url   href: 'https://registry.npm.taobao.org/http-server' }
+10 silly lockFile 3da86d64-istry-npm-taobao-org-http-server https://registry.npm.taobao.org/http-server
+11 verbose lock https://registry.npm.taobao.org/http-server d:\Users\xfluo\AppData\Roaming\npm-cache\3da86d64-istry-npm-taobao-org-http-server.lock
+12 verbose addRemoteTarball [ 'https://registry.npm.taobao.org/http-server', null ]
+13 info retry fetch attempt 1 at 14:14:41
+14 verbose fetch to= d:\Users\xfluo\AppData\Local\Temp\npm-8416-cbWpeaz_\registry.npm.taobao.org\http-server
+15 http GET https://registry.npm.taobao.org/http-server
+16 http 200 https://registry.npm.taobao.org/http-server
+17 verbose tar unpack d:\Users\xfluo\AppData\Local\Temp\npm-8416-cbWpeaz_\registry.npm.taobao.org\http-server
+18 silly lockFile 6f3a4bce-pm-taobao-org-http-server-unpack tar://d:\Users\xfluo\AppData\Local\Temp\npm-8416-cbWpeaz_\registry.npm.taobao.org\http-server-unpack
+19 verbose lock tar://d:\Users\xfluo\AppData\Local\Temp\npm-8416-cbWpeaz_\registry.npm.taobao.org\http-server-unpack d:\Users\xfluo\AppData\Roaming\npm-cache\6f3a4bce-pm-taobao-org-http-server-unpack.lock
+20 silly lockFile 3a66820f-istry-npm-taobao-org-http-server tar://d:\Users\xfluo\AppData\Local\Temp\npm-8416-cbWpeaz_\registry.npm.taobao.org\http-server
+21 verbose lock tar://d:\Users\xfluo\AppData\Local\Temp\npm-8416-cbWpeaz_\registry.npm.taobao.org\http-server d:\Users\xfluo\AppData\Roaming\npm-cache\3a66820f-istry-npm-taobao-org-http-server.lock
+22 silly gunzTarPerm modes [ '755', '644' ]
+23 error not a package d:\Users\xfluo\AppData\Local\Temp\npm-8416-cbWpeaz_\registry.npm.taobao.org\http-server
+24 silly lockFile 6f3a4bce-pm-taobao-org-http-server-unpack tar://d:\Users\xfluo\AppData\Local\Temp\npm-8416-cbWpeaz_\registry.npm.taobao.org\http-server-unpack
+25 silly lockFile 6f3a4bce-pm-taobao-org-http-server-unpack tar://d:\Users\xfluo\AppData\Local\Temp\npm-8416-cbWpeaz_\registry.npm.taobao.org\http-server-unpack
+26 silly lockFile 3a66820f-istry-npm-taobao-org-http-server tar://d:\Users\xfluo\AppData\Local\Temp\npm-8416-cbWpeaz_\registry.npm.taobao.org\http-server
+27 silly lockFile 3a66820f-istry-npm-taobao-org-http-server tar://d:\Users\xfluo\AppData\Local\Temp\npm-8416-cbWpeaz_\registry.npm.taobao.org\http-server
+28 silly lockFile 3da86d64-istry-npm-taobao-org-http-server https://registry.npm.taobao.org/http-server
+29 silly lockFile 3da86d64-istry-npm-taobao-org-http-server https://registry.npm.taobao.org/http-server
+30 error Error: ENOENT, open 'd:\Users\xfluo\AppData\Local\Temp\npm-8416-cbWpeaz_\registry.npm.taobao.org\http-server-unpack\package.json'
+31 error If you need help, you may report this *entire* log,
+31 error including the npm and node versions, at:
+31 error     <http://github.com/npm/npm/issues>
+32 error System Windows_NT 6.1.7601
+33 error command "c:\\Program Files (x86)\\nodejs\\node.exe" "c:\\Program Files (x86)\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "https://registry.npm.taobao.org/http-server"
+34 error cwd f:\GitHub\javascript\JsDemo\JSBasic\BookStore
+35 error node -v v0.11.9
+36 error npm -v 1.4.13
+37 error path d:\Users\xfluo\AppData\Local\Temp\npm-8416-cbWpeaz_\registry.npm.taobao.org\http-server-unpack\package.json
+38 error code ENOENT
+39 error errno -4058
+40 verbose exit [ -4058, true ]

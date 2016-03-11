@@ -15,3 +15,4 @@ G:\2016-02-20\demo\javascript\JsDemo\backbone\bin\backbone.pdb
 G:\2016-02-20\demo\javascript\JsDemo\backbone\obj\Debug\backbone.csprojResolveAssemblyReference.cache
 G:\2016-02-20\demo\javascript\JsDemo\backbone\obj\Debug\backbone.dll
 G:\2016-02-20\demo\javascript\JsDemo\backbone\obj\Debug\backbone.pdb
+F:\GitHub\javascript\JsDemo\backbone\bin\backbone.dll.config

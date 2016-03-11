@@ -8,3 +8,5 @@ G:\2016-02-20\demo\javascript\JsDemo\JSBasic\bin\JSBasic.pdb
 G:\2016-02-20\demo\javascript\JsDemo\JSBasic\obj\Debug\JSBasic.csprojResolveAssemblyReference.cache
 G:\2016-02-20\demo\javascript\JsDemo\JSBasic\obj\Debug\JSBasic.dll
 G:\2016-02-20\demo\javascript\JsDemo\JSBasic\obj\Debug\JSBasic.pdb
+F:\GitHub\javascript\JsDemo\JSBasic\bin\JSBasic.dll.config
+F:\GitHub\javascript\JsDemo\JSBasic\obj\Debug\JSBasic.csprojResolveAssemblyReference.cache

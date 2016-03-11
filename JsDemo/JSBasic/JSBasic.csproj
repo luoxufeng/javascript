@@ -60,7 +60,22 @@
     <Reference Include="System.Web.ApplicationServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="example\jquery插件学习\images\arrow3.gif" />
+    <Content Include="example\jquery插件学习\images\download_ico.jpg" />
+    <Content Include="example\jquery插件学习\images\productshow.gif" />
+    <Content Include="example\jquery插件学习\images\productshow.png" />
+    <Content Include="example\jquery插件学习\images\temp_pro1.jpg" />
+    <Content Include="example\jquery插件学习\images\temp_pro2.jpg" />
+    <Content Include="example\jquery插件学习\images\video1.jpg" />
+    <Content Include="example\jquery插件学习\images\video2.jpg" />
+    <Content Include="example\jquery插件学习\images\video3.jpg" />
+    <Content Include="example\jquery插件学习\images\video4.jpg" />
+    <Content Include="example\jquery插件学习\images\video5.jpg" />
+    <Content Include="example\jquery插件学习\images\video6.jpg" />
+    <Content Include="example\jquery插件学习\images\video7.jpg" />
+    <Content Include="example\jquery插件学习\images\video8.jpg" />
     <Content Include="example\jquery插件学习\插件extend方法学习.html" />
+    <Content Include="example\jquery插件学习\滚动图片插件.html" />
     <Content Include="example\jquery插件学习\简单插件一.html" />
     <Content Include="example\美食页面\css\food.css" />
     <Content Include="example\美食页面\css\header.css" />

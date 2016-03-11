@@ -1,0 +1,226 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>滚动图片插件</title>
+    <style type="text/css">
+        body {
+            margin: 0 auto;
+            text-align: center;
+            color: #616161;
+            font: 12px/1.5 arial, \5b8b\4f53;
+        }
+
+        ul, p {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        img {
+            border: 0;
+        }
+        a:link, a:visited {
+          color:#333;
+          text-decoration:none;
+        }
+    .productshow {
+        width:540px;
+        height:132px;
+        padding:4px 0;
+        margin:20px auto;
+        position:relative;
+        text-align:center;
+        font-family:微软雅黑，黑体;
+        background:url(images/productshow.png) no-repeat;
+    }
+      .productshow .scrollcontainer {
+           width:486px;
+           height:130px;
+           overflow:hidden;
+           position:relative;
+           margin:0 auto;
+      }
+
+      .productshow .scrollcontainer ul {
+          width:20000px; 
+          position:absolute;
+           left:0px;
+           top:0px;
+      }
+
+      .productshow .scrollcontainer li {
+           float:left;
+           width:162px;
+           height:130px;
+           text-align:center;
+      }
+        .productshow .scrollcontainer li p {
+           margin:0;
+           height:32px;
+           line-height:32px;
+        }
+        
+         a.abtn {
+            position: absolute;
+            top: 4px;
+            display: block;
+            height: 132px;
+            width: 6px;
+            overflow: hidden;
+            text-indent: -20000px;
+            background: url(images/arrow3.gif) 0px center no-repeat;
+        }
+        a.aleft {
+          left:7px;
+        }
+
+        a.aright {
+          right:7px;
+          background-position:-6px center;
+        }
+        a.agrayleft {
+          cursor:default;
+          background-position:-12px center;
+        }
+
+        a.agrayright {
+            cursor:default;
+            background-position:-18px center;
+        }
+
+    </style>
+</head>
+<body>
+    <h2>一、左右切换：每次移动固定距离</h2>
+    <div class="productshow">
+        <div class="scrollcontainer">
+            <ul>
+                <li>
+                    <div><a href="###"><img src="images/temp_pro1.jpg" alt="" /></a></div>
+                    <p><a href="">1.家电彩涂钢板</a></p>
+                </li>
+                <li>
+                    <div><a href="###"><img src="images/temp_pro1.jpg" alt="" /></a></div>
+                    <p><a href="">2.幻彩变色彩涂钢板</a></p>
+                </li>
+                <li>
+                    <div><a href="###"><img src="images/temp_pro1.jpg" alt="" /></a></div>
+                    <p><a href="">3.环保彩涂钢板</a></p>
+                </li>
+                <li>
+                    <div><a href="###"><img src="images/temp_pro1.jpg" alt="" /></a></div>
+                    <p><a href="">4.家电彩涂钢板</a></p>
+                </li>
+                <li>
+                    <div><a href="###"><img src="images/temp_pro1.jpg" alt="" /></a></div>
+                    <p><a href="">5.家电彩涂钢板</a></p>
+                </li>
+                <li>
+                    <div><a href="###"><img src="images/temp_pro1.jpg" alt="" /></a></div>
+                    <p><a href="">6.幻彩变色彩涂钢板</a></p>
+                </li>
+                <li>
+                    <div><a href="###"><img src="images/temp_pro1.jpg" alt="" /></a></div>
+                    <p><a href="">7.环保彩涂钢板</a></p>
+                </li>
+                <li>
+                    <div><a href="###"><img src="images/temp_pro1.jpg" alt="" /></a></div>
+                    <p><a href="">8.家电彩涂钢板</a></p>
+                </li>
+            </ul>
+        </div>
+        <a class="abtn aleft" href="#left">左移</a>
+        <a class="abtn aright" href="#right">右移</a>
+    </div>
+    <script src="../../Script/jquery.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var scrollobjsize = $(".productshow").find("li").length * 162;// Math.ceil($(".productshow").find("li").length / 3) * 486;
+            var movesize = 3;
+            var display = 3;
+            var len = 162;
+            var viewedsize = 486;
+            var offset = 0;
+            var offsetnow = 0;
+            var aright = $("a.aright");
+            var aleft = $("a.aleft");
+            var scrollobj = $(".productshow").find("ul");
+            if (scrollobjsize <= viewedsize) {
+                aright.addClass("agrayright");
+            }
+            aleft.addClass("agrayleft");
+
+            offset = scrollobjsize - viewedsize;
+            console.log(offset);
+            console.log($(".productshow").find("li").length);
+            aright.unbind("click");
+            aleft.unbind("click");
+            scrollobj.css("left","0px");
+
+            aright.on("click", function () {
+                if ($(this).hasClass(".agrayright")) {
+                    return false;
+                }
+
+                offsetnow += display*len;
+                if (offsetnow < offset - (display * len - viewedsize)) {
+                    scrollobj.animate({ left: -offsetnow }, 1000);
+                } else {
+                    scrollobj.animate({ left: -offset }, 1000);
+                    offsetnow = offset;
+                    $(this).addClass("agrayright");
+                }
+                aleft.removeClass("agrayleft");
+            });
+
+            aleft.on("click", function () {
+                if ($(this).hasClass(".agrayleft")) {
+                    return false;
+                }
+
+                offsetnow -= display * len;
+                if (offsetnow > display * len - viewedsize) {
+                    scrollobj.animate({ left: -offsetnow }, 1000);
+                } else {
+                    scrollobj.animate({ left: 0 }, 1000);
+                    offsetnow = 0;
+                    $(this).addClass("agrayleft");
+                }
+                aright.removeClass("agrayright");
+            });
+
+            function autoscroll() {
+                var vane = "right";
+                function aotoscrollImg() {
+                    if (vane == "right") {
+                        if (!$(".productshow").find("a.agrayright").length) {
+                            $(".productshow").find("a.aright").trigger("click");
+                        } else {
+                            vane = "left";
+                        }
+                    }
+                    if (vane == "left") {
+                        if (!$(".productshow").find("a.agrayleft").length) {
+                            $(".productshow").find("a.aleft").trigger("click");
+                        } else {
+                            vane = "right";
+                        }
+                    }
+                }
+
+                var scrollTimmer = setInterval(aotoscrollImg, 3000);
+                $(".productshow").hover(function () {
+                    clearInterval(scrollTimmer);
+                }, function () {
+                    scrollTimmer = setInterval(aotoscrollImg,3000);
+                });
+            }
+
+            autoscroll();
+        })
+    </script>
+</body>
+</html>

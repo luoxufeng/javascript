@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>tab选项卡制作</title>
+    <style>
+        body { font-size: 14px; background-color: #DDF3F7; color: #333; }
+        a { color: #0082CB; text-decoration: none; }
+        body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td  { margin: 0; padding:0;}
+        li,dd{list-style: none;}
+        .wisdom{width: 930px;margin: 0 auto;margin-top:50px;}
+        
+      
+.index_tab .f_left h3{
+  margin-top:0;
+  float:left;
+}
+
+.index_tab .f_left a{
+  color:#1ba8df;
+  float:left;
+  font-size:14px;
+  line-height: 26px;
+  font-weight: bold;
+  margin:0 0 0 20px;
+}
+
+.index_tab ul {
+    height: 39px;
+    border: 1px solid #e6e6e6;
+    border-bottom-color: #4bc1f3;
+    border-top: none 0;
+    z-index: 200;
+    text-align: center;
+    float: right;
+    background: #fff;
+    margin-left: -1px
+}
+
+.index_tab li {
+    float: left;
+    z-index: 1;
+    position: relative;
+    border-top: 1px solid #ddd;
+    height: 38px;
+    margin-right: -1px
+}
+
+.index_tab li.current {
+    border: 1px solid #4bc1f3;
+    border-top: 3px solid #4bc1f3;
+    border-bottom: none 0;
+    margin-left: -1px;
+    z-index: 2;
+    height: 37px;
+    _margin-bottom: -1px;
+    background: #fff;
+    border-radius: 3px 3px 0 0
+}
+
+.index_tab span {
+    font-weight: normal;
+    height: 14px;
+    display: inline-block;
+    margin-top: 12px;
+    border-left: 1px solid #ddd;
+    margin-left: -1px;
+    _margin-left: 0
+}
+
+.index_tab span a {
+    line-height: 14px;
+    color: #666;
+    padding: 0 15px;
+    font-weight: bold
+}
+
+.index_tab span a:hover {
+    color: #1ba8df;
+    text-decoration: none
+}
+
+.index_tab .current span {
+    font-weight: normal;
+    padding-top: 10px;
+    background: #fff;
+    margin-top: 0;
+    margin-left: 0;
+    border-left: 0 none
+}
+
+.index_tab .current span a {
+    color: #1ba8df;
+    padding: 0 14px
+}
+
+.index_tab .current span a:hover {
+    text-decoration: none
+}
+         .innerbox{
+            border: 1px solid #e6e6e6;
+            border-top-color:#4cc2f4;
+            background: #fff;
+            margin-top:-1px;
+            padding-bottom: 20px;
+         }
+
+        .innerbox li{
+          float: left;
+          width:208px;
+          overflow: hidden;
+          padding: 20px 0 0 19px;
+        }
+
+        .innerbox .pic{
+          display: inline-block;
+          height: 160px;
+          width:208px;
+          overflow: hidden;
+        }
+
+        .innerbox .pic img{
+           width:208px;
+           height: 160px;
+        }
+
+        .innerbox .info{
+          padding-top:9px;
+        }
+
+        .innerbox .info_pic{
+          width:38px;
+          height:38px;
+          overflow: hidden;
+          display: inline-block;
+          float:left;
+          padding:1px;
+          margin-right:10px;
+        }
+
+        .innerbox .info_pic img{
+          width:38px;
+          height:38px;
+          overflow: hidden;
+        }
+
+        .innerbox h3{
+          font-size:16px;
+          color:#666;
+          font-weight: normal;
+          padding-bottom: 8px;
+        }
+
+        .innerbox p{
+          color:#999;
+        }
+
+        .ellipsis{
+           overflow: hidden;
+           white-space: nowrap;
+           -o-text-overflow: ellipsis;
+           text-overflow: ellipsis;
+        }
+
+        .cf {zoom:1}
+
+       .cf:after {
+        content: ".";
+        display: block;
+        clear: both;
+        font-size: 0;
+        height: 0;
+        line-height: 0;
+        visibility: hidden;
+        overflow: hidden
+     }
+    </style>
+</head>
+<body>
+  <div>
+  	 <div class="wisdom">
+       <div class="index_tab cf">
+        <div class="f_left">
+            <h3>智慧旅游旗舰店</h3>
+            <a href="http://you.ctrip.com/it/" target="_blank">更多</a>
+        </div>
+        <ul id="wisdomTourismTab">
+            <li class="current" data-id="2">
+                <span><a href="javascript:;">华东</a></span>
+            </li>
+            <li data-id="7">
+                <span><a href="javascript:;">华南</a></span>
+            </li>
+            <li data-id="4">
+                <span><a href="javascript:;">华中</a></span>
+            </li>
+            <li data-id="6">
+                <span><a href="javascript:;">西南</a></span>
+            </li>
+            <li data-id="5">
+                <span><a href="javascript:;">西北</a></span>
+            </li>
+        </ul>
+    </div>
+       <div class="innerbox">
+         <ul class="cf" id="wisdomContent">
+           
+         </ul>
+       </div>
+     </div>
+  </div>
+</body>
+<script type="text/template" id="tpList">
+  <% _.each(datas,function(item){%>
+          <li>
+           <div class="pic"><img src="http://images4.c-ctrip.com/target//fd/tg/g3/M05/43/83/CggYGVauxnOARjH0AABjF6wYBVs255.jpg"></div>
+            <div class="info">
+              <div class="info_pic">
+                 <img src="http://images4.c-ctrip.com/target//fd/tg/g4/M09/7F/A9/CggYHlbY5yaABYEHAADXjAkWMWY264.jpg">
+              </div>
+              <h3 class="ellipsis"><%=item.title%></h3>
+              <p class="ellipsis"><%=item.content%></p>
+            </div>
+          </li>
+  <%})%>
+</script>
+<script src="script/jquery.js"></script>
+<script src="script/understore.js"></script>
+<script>
+  var datas={};
+
+  $("#wisdomTourismTab li").on("click",function(){
+     var id=$(this).attr("data-id");
+     $(this).addClass("current").siblings().removeClass("current")
+     $.ajax({
+        type:"post",
+        url:"http://m.ctrip.com/restapi/soa2/10120/json/GetH5ScheduleList?format=json&_fxpcqlniredt=09031079310188191256",
+        data:{"DistrictId":id,"CoverImageSize":{"Width":600,"Height":339},"PagingParameter":{"PageSize":20,"PageIndex":1},"contentType":"json"},
+        success:function(data){
+            if(data && data.Results){
+               for(var i=0;i<data.Results.length;i++){
+                   var item={};
+                   item.title=data.Results[i].Title;
+                   item.content=data.Results[i].Introduce;
+                   datas[i]=item;
+               }
+
+               var temp=_.template($("#tpList").html(),datas);
+               $("#wisdomContent").html(temp);
+            }
+        }
+     });
+  });
+
+  $("#wisdomTourismTab li:first").trigger("click");//默认触发第一个tab事件
+</script>
+</html>

@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+    <title>scroll滚动</title>
+    <style type="text/css">
+        *{margin:0;padding:0;}
+      .wrap {
+        height: 100%;
+        color: #444;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-box-align: start;
+        -webkit-box-pack: start;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        position: absolute;
+        padding-top: 44px;
+        width: 100%;
+     }
+     
+     .scrollfix
+     {
+        height:100%;
+        width:100%;
+        box-sizing:border-box;
+        -webkit-box-sizing:border-box;
+        overflow-y:auto;    
+     }
+     
+     .jlist_v1
+     {
+        padding:4px 10px 10px 10px;    
+     }
+     
+     ul,li
+     {
+         list-style:none;
+     }
+     
+     .jlist_v1 .jlist_v1list li {
+        background-color:#fff;
+        margin-top:10px;
+        border-radius:2px;
+        box-shadow:0 0 0.5px 1.1px;
+        padding-bottom:5px;
+        position:relative;
+     }
+     
+     .jlist_v1 .jlist_v1list li .img {
+        background: #ffffff url("https://pages.c-ctrip.com/you/opt/travels_defult_bg.png?v=20160323_19_53") no-repeat 50% 50%;
+        min-height: 150px;
+        position: relative;
+        overflow: hidden;
+    }
+
+.jlist_v1 .jlist_v1list li .img img {
+    width: 100%;
+    height: auto;
+}
+    </style>
+</head>
+<body>
+<div class="wrap">
+   <div class="scrollfix">
+      <div class="jlist_v1">
+        <ul class="jlist_v1list">
+           <li><img src="http://dimg07.c-ctrip.com/images/tg/617/837/958/ae38aa725ee34013834da4907ca811a9_Z_600_339.jpg"></li>
+           <li><img src="http://dimg07.c-ctrip.com/images/tg/617/837/958/ae38aa725ee34013834da4907ca811a9_Z_600_339.jpg" style="height: 422.167px;"></li>
+           <li><img src="http://dimg07.c-ctrip.com/images/tg/617/837/958/ae38aa725ee34013834da4907ca811a9_Z_600_339.jpg" style="height: 422.167px;"></li>
+           <li><img src="http://dimg07.c-ctrip.com/images/tg/617/837/958/ae38aa725ee34013834da4907ca811a9_Z_600_339.jpg" style="height: 422.167px;"></li>
+           <li><img src="http://dimg07.c-ctrip.com/images/tg/617/837/958/ae38aa725ee34013834da4907ca811a9_Z_600_339.jpg" style="height: 422.167px;"></li>
+           <li><img src="http://dimg07.c-ctrip.com/images/tg/617/837/958/ae38aa725ee34013834da4907ca811a9_Z_600_339.jpg" style="height: 422.167px;"></li>
+           <li><img src="http://dimg07.c-ctrip.com/images/tg/617/837/958/ae38aa725ee34013834da4907ca811a9_Z_600_339.jpg" style="height: 422.167px;"></li>
+           <li><img src="http://dimg07.c-ctrip.com/images/tg/617/837/958/ae38aa725ee34013834da4907ca811a9_Z_600_339.jpg" style="height: 422.167px;"></li>
+           <li><img src="http://dimg07.c-ctrip.com/images/tg/617/837/958/ae38aa725ee34013834da4907ca811a9_Z_600_339.jpg" style="height: 422.167px;"></li>
+           <li><img src="http://dimg07.c-ctrip.com/images/tg/617/837/958/ae38aa725ee34013834da4907ca811a9_Z_600_339.jpg" style="height: 422.167px;"></li>
+           <li><img src="http://dimg07.c-ctrip.com/images/tg/617/837/958/ae38aa725ee34013834da4907ca811a9_Z_600_339.jpg" style="height: 422.167px;"></li>
+           <li><img src="http://dimg07.c-ctrip.com/images/tg/617/837/958/ae38aa725ee34013834da4907ca811a9_Z_600_339.jpg" style="height: 422.167px;"></li>
+           <li><img src="http://dimg07.c-ctrip.com/images/tg/617/837/958/ae38aa725ee34013834da4907ca811a9_Z_600_339.jpg" style="height: 422.167px;"></li>
+        </ul>
+      </div>
+   </div>
+</div>
+</body>
+<script src="script/jquery.js"></script>
+<script src="script/understore.js"></script>
+<script>
+    $(".scrollfix").off("scroll").on("scroll", function (e) {
+        var node = $(e.currentTarget);
+        var winH = node.height();
+        var scrollT = node.scrollTop(); //滚动条
+        var pageH = $(".jlist_v1").height();
+        console.log("winH="+winH+",scrollT="+scrollT+",pageH="+pageH);
+        var remain = winH + scrollT - pageH; //容器的高度+滚动条的高度-内容的高度
+        if (remain > 0) {
+            alert("处理第二频的滚动事件哦");
+        }
+    });
+
+    /*
+      滚动效果：
+      第一种实现方法：
+        父容器中嵌套一个子容器 ，父容器的高度为频幕的高度，内容的高度为100%，
+        当频幕的高度+滚动条距顶部的高度>内容高度时，触发滚动事件，
+        现在一般的做法是父容器是一个弹性盒子，子容器内容的高度设置为100%，
+        例如以上例子： 
+
+     第二种实现方法：
+       需要把所有的父容器设置高度为100%
+
+
+       实现原理：
+       当屏幕的高度+滚动条距离top的距离=内容的高度的时候，代表已经加载完成，需要加载下一页的数据
+    */
+</script>
+</html>

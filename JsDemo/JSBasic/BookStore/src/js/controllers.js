@@ -113,6 +113,7 @@ bookListModule.controller('BookListCtrl', function($scope, $http, $state, $state
 });
 
 
+
 /**
  * 这里是书籍详情模块
  * @type {[type]}

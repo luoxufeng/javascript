@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>去空格</title>
+</head>
+<body>
+    <input type="text" id="txtName" />
+    <input type="button" id="btnTrim" value="去除空格" />
+    <script>
+        String.prototype.trim = function () {
+            return this.replace(/(^\s*)|(\s*$)/g,"");
+        }
+
+        String.prototype.ltrim = function () {
+            return this.replace(/(^\s)/g,"");
+        }
+        String.prototype.rtrim = function () {
+            return this.replace(/(\s*$)/g,"");
+        }
+
+        var btn = document.getElementById("btnTrim");
+        btnTrim.onclick = function () {
+            var name = document.getElementById("txtName").value;
+            if (name.length > 0) {
+                console.log("去掉左右空格:" + name.trim());
+                console.log("去掉左边空格：" + name.ltrim());
+                console.log("去掉右边空格："+name.rtrim());
+            }
+        }
+    </script>
+</body>
+</html>

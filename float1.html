@@ -1,0 +1,77 @@
+<html>
+<head>
+    <meta charset="utf-8">
+	<title>float实例</title>
+	<style>
+	    body { font-size: 14px; background-color: #DDF3F7; color: #333; }
+        a { color: #0082CB; text-decoration: none; }
+        p { margin: 0; } img { border: 0; }
+		
+		.main{ width: 500px;margin-left: auto;margin-right: auto;}
+		.box{margin-bottom: 10px;background: #fff;}
+		.imageheader{
+			float: left;
+			padding-top:10px;
+		}
+
+		.content{
+			margin-left: 70px;
+			padding:10px 0;
+		}
+		.content .mib_sms{
+          line-height: 22px;
+          padding-bottom: 6px;
+          font-size:14px;
+
+		}
+		.box .box_list{
+			padding: 10px;
+			line-height: 22px;
+		}
+
+		.box .box_list .mib_select{
+			width:80px;
+			padding:5px;
+			font-size: 100%;
+		}
+	</style>
+</head>
+<body>
+	<div class="main" id="main">
+		<div class="box">
+			<div class="imageheader">
+				 <a href="http://t.sina.com.cn/xuruoxuan" class="mib_head_a">
+	                <img id="mibHeadImg" title="徐若瑄VIVIAN" src="http://img.mukewang.com/53e2e9470001dfd200500050.jpg">
+	            </a>
+			</div>
+			<div class="content">
+				<p class="mib_sms">
+					<a title="徐若瑄" href="#">徐若瑄VIVIAN</a>:一個人的晚餐！茶泡飯！飯、飯、飯… 今日不減肥，先把病治好再說！ 我認真吃完這，燒就會退了吧？！ 開動啦~~~~~~~~~~~~~~~~~~
+				</p>
+				<div class="feed_img">
+					 <div class="feed_img"><img src="http://img.mukewang.com/53e2e9b10001948000890120.jpg" height="120"></div>
+				</div>
+			</div>
+		</div>
+		<div class="box">
+			<p class="box_list">
+					选择内容的宽度：<select id="minSelect" class="mib_select">
+                	<option value="300px">300px</option>
+                    <option value="400px">400px</option>
+                    <option value="500px">500px</option>
+                    <option value="600px" selected>600px</option>
+                </select>
+			</p>
+		</div>
+	</div>
+	<script>
+       var select=document.getElementById("minSelect");
+       var main=document.getElementById("main");
+       if(select){
+       	   select.onchange=function(){
+               main.style.width=this.value;
+       	   };
+       }
+	</script>
+</body>
+</html>

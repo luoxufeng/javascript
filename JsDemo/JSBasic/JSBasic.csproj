@@ -2043,6 +2043,7 @@
     <Content Include="总结整理\HTML5\Dataset介绍\classList.htm" />
     <Content Include="总结整理\HTML5\Dataset介绍\firstdataset.htm" />
     <Content Include="总结整理\JavaScript\CurrentTarget与Target的区别\index1.htm" />
+    <Content Include="总结整理\JavaScript\trim.html" />
     <Content Include="总结整理\JavaScript\全局命名空间\全局命名空间.htm" />
     <Content Include="总结整理\JavaScript\变量提升\变量提升.htm" />
     <Content Include="总结整理\JavaScript\基本概念\数据类型.js" />
